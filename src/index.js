@@ -3,6 +3,8 @@ import "./style.css";
 const toggleLightingModes = document.getElementById("toggleLightingModes");
 const cards = document.querySelectorAll("div.cards");
 const heroSection = document.querySelector("section.hero-section");
+let addedScrollToTopButton = false;
+const body = document.querySelector("body");
 
 toggleLightingModes.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark");
@@ -31,6 +33,23 @@ const rotateCards = () => {
 rotateCards();
 
 window.addEventListener("scroll", () => {
+  if (window.scrollY != 0 && addedScrollToTopButton === false) {
+    const scrollToTopButton = document.createElement("button");
+    scrollToTopButton.innerText = "↑";
+    scrollToTopButton.classList.add("scroll-to-top-btn");
+    scrollToTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    });
+
+    body.appendChild(scrollToTopButton);
+    addedScrollToTopButton = true;
+  } else if (addedScrollToTopButton === true && window.scrollY === 0) {
+    const scrollToTopButton = document.querySelector(
+      "button.scroll-to-top-btn"
+    );
+    body.removeChild(scrollToTopButton);
+    addedScrollToTopButton = false;
+  }
   let distance = window.innerHeight * 2;
   let topValue = heroSection.getBoundingClientRect().top;
   let index = -1 * (topValue / distance + 1);
