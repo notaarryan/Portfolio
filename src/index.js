@@ -31,7 +31,7 @@ const rotateCards = () => {
 rotateCards();
 
 window.addEventListener("scroll", () => {
-  let distance = window.innerHeight / 2;
+  let distance = window.innerHeight * 2;
   let topValue = heroSection.getBoundingClientRect().top;
   let index = -1 * (topValue / distance + 1);
   index = Math.floor(index);
