@@ -1,39 +1,70 @@
 import "./style.css";
-
-const toggleLightingModes = document.getElementById("toggleLightingModes");
-const cards = document.querySelectorAll("div.cards");
-const heroSection = document.querySelector("section.hero-section");
-let addedScrollToTopButton = false;
-const body = document.querySelector("body");
-
-toggleLightingModes.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark");
-  if (document.documentElement.classList.contains("dark")) {
-    toggleLightingModes.innerText = "Light Mode";
-  } else {
-    toggleLightingModes.innerText = "Dark Mode";
+class App {
+  constructor() {
+    this.addedScrollToTopButton = false;
+    this.#cachedDom();
+    this.rotateCards();
+    this.#addEventListeners();
   }
-});
 
-const rotateCards = () => {
-  let angle = 0;
-  cards.forEach((card, zIndex) => {
-    if (!card.classList.contains("away")) {
-      card.style.transform = `translateY(0) rotate(${angle}deg)`;
-      card.style.zIndex = cards.length - zIndex;
-      angle = angle - 10;
-    } else if (card.classList.contains("away")) {
-      card.style.transform = `translateY(-120vh) rotate(48deg)`;
+  #cachedDom() {
+    this.toggleLightingModes = document.getElementById("toggleLightingModes");
+    this.cards = document.querySelectorAll("div.cards");
+    this.heroSection = document.querySelector("section.hero-section");
+    this.body = document.querySelector("body");
+  }
+
+  #addEventListeners() {
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      }, 10);
+      document.body.classList.add("loaded");
+    });
+
+    this.toggleLightingModes.addEventListener("click", () =>
+      this.toggleLightingModeClasses()
+    );
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 0) {
+        this.createScrollToTopButton();
+      } else {
+        this.deleteScrollToTopButton();
+      }
+
+      this.removeCardsOnScroll();
+      this.rotateCards();
+    });
+  }
+
+  rotateCards() {
+    let angle = 0;
+    this.cards.forEach((card, zIndex) => {
+      if (!card.classList.contains("away")) {
+        card.style.transform = `translateY(0) rotate(${angle}deg)`;
+        card.style.zIndex = this.cards.length - zIndex;
+        angle = angle - 10;
+      } else if (card.classList.contains("away")) {
+        card.style.transform = `translateY(-120vh) rotate(48deg)`;
+      } else {
+        card.style.transform = `translateY(120vh) rotate(${angle}deg)`;
+      }
+    });
+  }
+
+  toggleLightingModeClasses() {
+    document.documentElement.classList.toggle("dark");
+    if (document.documentElement.classList.contains("dark")) {
+      this.toggleLightingModes.innerText = "Light Mode";
     } else {
-      card.style.transform = `translateY(120vh) rotate(${angle}deg)`;
+      this.toggleLightingModes.innerText = "Dark Mode";
     }
-  });
-};
+  }
 
-rotateCards();
+  createScrollToTopButton() {
+    if (this.addedScrollToTopButton) return;
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY != 0 && addedScrollToTopButton === false) {
     const scrollToTopButton = document.createElement("button");
     scrollToTopButton.innerText = "↑";
     scrollToTopButton.classList.add("scroll-to-top-btn");
@@ -41,34 +72,35 @@ window.addEventListener("scroll", () => {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     });
 
-    body.appendChild(scrollToTopButton);
-    addedScrollToTopButton = true;
-  } else if (addedScrollToTopButton === true && window.scrollY === 0) {
+    this.body.appendChild(scrollToTopButton);
+    this.addedScrollToTopButton = true;
+  }
+
+  deleteScrollToTopButton() {
+    if (!this.addedScrollToTopButton) return;
+
     const scrollToTopButton = document.querySelector(
       "button.scroll-to-top-btn"
     );
-    body.removeChild(scrollToTopButton);
-    addedScrollToTopButton = false;
+    if (scrollToTopButton) this.body.removeChild(scrollToTopButton);
+
+    this.addedScrollToTopButton = false;
   }
-  let distance = window.innerHeight * 2;
-  let topValue = heroSection.getBoundingClientRect().top;
-  let index = -1 * (topValue / distance + 1);
-  index = Math.floor(index);
-  for (let i = 0; i < cards.length; i++) {
-    if (i <= index) {
-      cards[i].classList.add("away");
-      cards[i].classList.remove("in-place");
-    } else {
-      cards[i].classList.remove("away");
-      cards[i].classList.add("in-place");
+
+  removeCardsOnScroll() {
+    let distance = window.innerHeight * 2;
+    let topValue = this.heroSection.getBoundingClientRect().top;
+    let index = -1 * (topValue / distance + 1);
+    index = Math.floor(index);
+    for (let i = 0; i < this.cards.length; i++) {
+      if (i <= index) {
+        this.cards[i].classList.add("away");
+        this.cards[i].classList.remove("in-place");
+      } else {
+        this.cards[i].classList.remove("away");
+        this.cards[i].classList.add("in-place");
+      }
     }
   }
-  rotateCards();
-});
-
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, 10);
-  document.body.classList.add("loaded");
-});
+}
+new App();
