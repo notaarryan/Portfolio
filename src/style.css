@@ -103,15 +103,15 @@ table {
     }
 }
 
-@keyframes revealTitleUnderline {
+@keyframes fadeInPage {
     from {
         opacity: 0;
-        transform: scaleX(0);
+        /* transform: scaleY(0); */
     }
 
     to {
         opacity: 1;
-        transform: scaleX(1);
+        /* transform: scaleY(1); */
     }
 }
 
@@ -122,6 +122,12 @@ body {
     background-color: var(--body-background-color);
     overflow-x: hidden;
     overflow-y: auto;
+    opacity: 0;
+    transform-origin: top;
+}
+
+body.loaded {
+    animation: fadeInPage 1s ease-in-out both;
 }
 
 nav {
@@ -159,10 +165,14 @@ div.title a::before {
     opacity: 0;
     filter: blur(15px);
     z-index: -1;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
 }
 
 div.title a:hover::before {
-    animation: revealTitleUnderline 0.3s ease-in both;
+    opacity: 1;
+    transform: scaleX(1);
 }
 
 ul.nav {
@@ -198,10 +208,14 @@ ul.nav li::before {
     background: var(--nav-a-before-gradient);
     filter: blur(20px);
     transform-origin: bottom;
+    opacity: 0;
+    transform: scaleY(0);
+    transition: all 0.3s ease-in-out;
 }
 
 ul.nav li:hover::before {
-    animation: revealBefore 0.3s ease-in both;
+    opacity: 1;
+    transform: scaleY(1);
 }
 
 a:not(.site-title):hover {
@@ -211,7 +225,7 @@ a:not(.site-title):hover {
 section.hero-section {
     width: 100vw;
     display: flex;
-    height: 220vh;
+    height: 400vh;
 }
 
 section.hero-section>div.hero-section-left {
@@ -223,6 +237,7 @@ section.hero-section>div.hero-section-left {
     align-items: center;
     flex-basis: 50%;
     height: 100vh;
+    z-index: -1;
 }
 
 section.hero-section>div.hero-section-left>div.text>h1 {
@@ -253,7 +268,7 @@ section.hero-section>div.hero-section-right {
     height: 350px;
     width: 350px;
     border-radius: 25px;
-    transition: 0.5s ease-in-out;
+    transition: transform 0.2s;
 }
 
 #card1 {

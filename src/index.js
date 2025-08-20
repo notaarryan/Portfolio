@@ -31,18 +31,25 @@ const rotateCards = () => {
 rotateCards();
 
 window.addEventListener("scroll", () => {
-  let distance = window.innerHeight / 5;
+  let distance = window.innerHeight / 2;
   let topValue = heroSection.getBoundingClientRect().top;
   let index = -1 * (topValue / distance + 1);
   index = Math.floor(index);
   for (let i = 0; i < cards.length; i++) {
     if (i <= index) {
       cards[i].classList.add("away");
+      cards[i].classList.remove("in-place");
     } else {
       cards[i].classList.remove("away");
-      let angle = -10 * i;
-      cards[i].style.transform = `translateY(120vh) rotate(${angle}deg)`;
+      cards[i].classList.add("in-place");
     }
   }
   rotateCards();
+});
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, 10);
+  document.body.classList.add("loaded");
 });
