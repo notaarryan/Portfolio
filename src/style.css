@@ -18,6 +18,7 @@
     --card-6-background: #00c853;
     --scroll-to-top-button-shadow-color: rgba(0, 0, 0, 0.5);
     --scroll-to-top-button-border-color: rgba(0, 0, 0, 0.4);
+    --about-me-section-gradient: radial-gradient(#ff6a00, #ee0979)
 }
 
 :root.dark {
@@ -27,8 +28,7 @@
     --body-background-color: #0d0d1a;
     --scroll-to-top-button-shadow-color: rgba(255, 255, 255, 0.5);
     --scroll-to-top-button-border-color: rgba(255, 255, 255, 0.4);
-
-
+    --about-me-section-gradient: radial-gradient(#ff6a00, #ee0979)
 }
 
 *,
@@ -97,18 +97,6 @@ table {
     border-spacing: 0;
 }
 
-@keyframes revealBefore {
-    from {
-        opacity: 0;
-        transform: scaleY(0);
-    }
-
-    to {
-        opacity: 1;
-        transform: scaleY(1);
-    }
-}
-
 @keyframes fadeInPage {
     from {
         opacity: 0;
@@ -121,6 +109,74 @@ table {
     }
 }
 
+@keyframes revealOnScroll {
+    0% {
+        opacity: 0;
+        transform: translateY(120%);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes revealContentOnScroll {
+    0% {
+        opacity: 0;
+        transform: translateY(120%);
+    }
+
+    /* 50% {
+        opacity: 0.5;
+        transform: translateY(-10%);
+    } */
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* @media (max-width: 1000px) {
+    html>body {
+        padding: 0;
+    }
+
+    nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        flex-direction: column;
+    }
+
+    body>main {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+    }
+
+    body>main>section.hero-section {
+        display: block;
+        height: 100vh;
+        width: 100%;
+    }
+
+    body>main>section.hero-section>div.hero-section-left {
+        flex-basis: 100%;
+    }
+
+    body>main>section.hero-section>div.hero-section-right {
+        display: none;
+    }
+} */
+
 body {
     position: relative;
     font-family: var(--font-body);
@@ -129,7 +185,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     opacity: 0;
-    padding: 40px;
+    /* padding: 40px; */
     transform-origin: top;
 }
 
@@ -230,6 +286,7 @@ a:not(.site-title):hover {
 }
 
 section.hero-section {
+    padding: 40px;
     width: 100vw;
     display: flex;
     height: 1300vh;
@@ -272,8 +329,9 @@ section.hero-section>div.hero-section-right {
 .cards {
     position: absolute;
     padding: 40px;
-    height: 350px;
-    width: 350px;
+    /* max-width: 350px; */
+    width: min(35vw, 350px);
+    aspect-ratio: 1/1;
     border-radius: 25px;
     transition: transform 0.2s;
 }
@@ -320,4 +378,99 @@ button.scroll-to-top-btn {
 
 button.scroll-to-top-btn:hover {
     opacity: 1;
+}
+
+section.about-section {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    padding: 60px 40px;
+    min-height: 100vh;
+}
+
+section.about-section>h2 {
+    font-family: var(--headings-font);
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reveal-on-scroll {
+    animation: revealOnScroll 3s both;
+    animation-timeline: view(90% 10%);
+}
+
+section.about-section>div.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+section.about-section>div.content div {
+    height: 100%;
+    padding: 10px;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+section.about-section .left-content p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+div.content div.left-content.reveal-on-scroll {
+    animation: revealContentOnScroll 3s both;
+    animation-timeline: view(70% 30%);
+}
+
+div.content div.right-content.reveal-on-scroll {
+    animation: revealContentOnScroll 1s 1s both;
+    animation-timeline: view(80% 30%);
+}
+
+section.about-section>div.content div h3 {
+    font-family: var(--headings-font);
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
+    width: max-content;
+    position: relative;
+}
+
+section.about-section>div.content div h3::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--font-color);
+}
+
+section.about-section>div.content div ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    list-style: disc;
+}
+
+section.about-section .right-content h3 {
+    margin-top: 2rem;
+}
+
+section.about-section .right-content p {
+    max-width: 75%;
+    margin-bottom: 0.5rem;
+}
+
+section.about-section .right-content p.degree {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+section.about-section .right-content p.university {
+    font-size: clamp(0.8rem, 1.5vw, 1.25rem);
 }
