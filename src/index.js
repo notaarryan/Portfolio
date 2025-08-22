@@ -13,12 +13,15 @@ class App {
     this.heroSection = document.querySelector("section.hero-section");
     this.body = document.querySelector("body");
     this.projectCard = document.querySelectorAll(".project-cards");
+    this.githubLogo = document.getElementById("github-logo");
   }
 
   #addEventListeners() {
     window.addEventListener("load", () => {
       if (localStorage.getItem("lightingMode") === "dark") {
         document.documentElement.classList.toggle("dark");
+        this.githubLogo.src =
+          "https://img.icons8.com/?size=100&id=12598&format=png&color=FFFFFF";
       }
       setTimeout(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -85,9 +88,13 @@ class App {
     document.documentElement.classList.toggle("dark");
     if (document.documentElement.classList.contains("dark")) {
       localStorage.setItem("lightingMode", "dark");
+      this.githubLogo.src =
+        "https://img.icons8.com/?size=100&id=12598&format=png&color=FFFFFF";
       this.toggleLightingModes.innerText = "Light Mode";
     } else {
       localStorage.setItem("lightingMode", "light");
+      this.githubLogo.src =
+        "https://img.icons8.com/?size=100&id=12598&format=png&color=000000";
       this.toggleLightingModes.innerText = "Dark Mode";
     }
   }
