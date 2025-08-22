@@ -12,10 +12,14 @@ class App {
     this.cards = document.querySelectorAll("div.cards");
     this.heroSection = document.querySelector("section.hero-section");
     this.body = document.querySelector("body");
+    this.projectCard = document.querySelectorAll(".project-cards");
   }
 
   #addEventListeners() {
     window.addEventListener("load", () => {
+      if (localStorage.getItem("lightingMode") === "dark") {
+        document.documentElement.classList.toggle("dark");
+      }
       setTimeout(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "auto" });
       }, 10);
@@ -35,6 +39,30 @@ class App {
 
       this.removeCardsOnScroll();
       this.rotateCards();
+    });
+
+    this.projectCard.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const moveX = (x - centerX) / 30;
+        const moveY = (y - centerY) / 30;
+        console.log(moveX, moveY);
+        card.style.transform = `scale(1.05) translate(${moveX}px, ${moveY}px)`;
+        card.style.boxShadow = `0 0 10px var(--shadow-color)`;
+        card.style.zIndex = 10;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "scale(1) translate(0, 0)";
+        card.style.boxShadow = ``;
+        card.style.zIndex = 1;
+      });
     });
   }
 
@@ -56,8 +84,10 @@ class App {
   toggleLightingModeClasses() {
     document.documentElement.classList.toggle("dark");
     if (document.documentElement.classList.contains("dark")) {
+      localStorage.setItem("lightingMode", "dark");
       this.toggleLightingModes.innerText = "Light Mode";
     } else {
+      localStorage.setItem("lightingMode", "light");
       this.toggleLightingModes.innerText = "Dark Mode";
     }
   }
