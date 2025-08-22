@@ -421,7 +421,7 @@ main>section {
     display: grid;
     grid-template-rows: auto 1fr;
     padding: 60px 40px;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 main>section>h2 {
@@ -539,7 +539,7 @@ section.about-section .right-content div.container img {
 }
 
 section.projects-section {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .wave {
@@ -574,4 +574,44 @@ div.projects-container div {
 main>section.projects-section>div.projects-container.reveal-content-on-scroll {
     animation: revealContentOnScroll 3s both;
     animation-timeline: view(90% 5%);
+}
+
+footer>section {
+    padding: 20px;
+    width: 100vw;
+    border-top: 1px solid var(--font-color);
+    min-height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: min(5%, 10px);
+}
+
+section.contact-me-section>div {
+    flex: 1;
+    display: flex;
+    gap: min(5%, 25px);
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+}
+
+section.contact-me-section>div>a {
+    width: min(15%, 50px);
+    height: auto;
+}
+
+section.contact-me-section>div>a>img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+footer p {
+    flex: 1;
+    flex-basis: 50%;
+    font-size: 0.9rem;
+    color: var(--font-color);
+    opacity: 0.8;
 }
