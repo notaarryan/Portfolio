@@ -11,8 +11,8 @@ Hosted at: [https://notaarryan.github.io/Portfolio/](https://notaarryan.github.i
 ## 🚀 Technologies Used
 
 - **HTML5**
-- **CSS3** (including custom animations and transitions)
-- **JavaScript (ES6+)**
+- **CSS3** (custom properties, grid, flexbox, animations, transitions)
+- **JavaScript (ES6+)** (OOP, DOM manipulation, event handling)
 - **Webpack** (modular bundling for production and development)
 - **Jest** (unit testing)
 - **Babel** (transpiling modern JS)
@@ -20,13 +20,14 @@ Hosted at: [https://notaarryan.github.io/Portfolio/](https://notaarryan.github.i
 
 ## 🛠️ Skills & Mastery
 
-- Responsive web design
-- Advanced CSS (custom properties, grid, flexbox, media queries)
+- Responsive web design & mobile-first development
+- Advanced CSS (variables, grid, flexbox, media queries)
 - JavaScript DOM manipulation and event handling
 - Local storage for theme persistence
 - Interactive UI features (card rotation, scroll-to-top button, dark/light mode toggle)
 - Modular code structure and OOP in JS
-- Accessibility best practices
+- Accessibility best practices (semantic HTML, alt tags)
+- SEO optimization (meta tags, Open Graph)
 - Git & GitHub for version control and deployment
 
 ## 📂 Notable Features
@@ -37,12 +38,8 @@ Hosted at: [https://notaarryan.github.io/Portfolio/](https://notaarryan.github.i
 - **Projects Showcase:** Live GitHub repository pins with direct links
 - **About & Contact Sections:** Education, tech stack, certifications, and social links
 - **Mobile Friendly:** Fully responsive layout for all devices
-
-## 🏆 Certifications & Achievements
-
-- ICPC Regional Qualifier/Competitor (Nov 2024)
-- HackerRank JavaScript (Basic & Intermediate)
-- HackerRank Python (Basic)
+- **Social Sharing:** Open Graph meta tags for rich previews
+- **Site Icon:** Favicon and apple-touch-icon for browser and sharing visibility
 
 ## 📬 Contact
 
@@ -73,10 +70,10 @@ Hosted at: [https://notaarryan.github.io/Portfolio/](https://notaarryan.github.i
   <img src="./src/assets/lighthouse-mobile.png" alt="Lighthouse Mobile Score" style="max-width:100%; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);" />
 </p>
 
-- **Performance:** 81
-- **Accessibility:** 90
+- **Performance:** 82
+- **Accessibility:** 100
 - **Best Practices:** 100
-- **SEO:** 73
+- **SEO:** 100
 
 ## 📊 Lighthouse Score (Desktop)
 
@@ -84,10 +81,10 @@ Hosted at: [https://notaarryan.github.io/Portfolio/](https://notaarryan.github.i
   <img src="./src/assets/lighthouse-desktop.png" alt="Lighthouse Desktop Score" style="max-width:100%; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);" />
 </p>
 
-- **Performance:** 96
-- **Accessibility:** 90
+- **Performance:** 97
+- **Accessibility:** 96
 - **Best Practices:** 100
-- **SEO:** 73
+- **SEO:** 100
 
 ## 📝 License
 
