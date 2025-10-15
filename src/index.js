@@ -125,7 +125,7 @@ class App {
   }
 
   removeCardsOnScroll() {
-    let distance = window.innerHeight * 2;
+    let distance = window.innerHeight * 1.5;
     let topValue = this.heroSection.getBoundingClientRect().top;
     let index = -1 * (topValue / distance + 1);
     index = Math.floor(index);

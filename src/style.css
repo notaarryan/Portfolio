@@ -16,6 +16,8 @@
     --card-4-background: #f647ca;
     --card-5-background: #ffb400;
     --card-6-background: #00c853;
+    --card-7-background: #0d0d1a;
+    --card-8-background: orange;
     --shadow-color: rgba(0, 0, 0, 0.5);
     --scroll-to-top-button-border-color: rgba(0, 0, 0, 0.4);
     --about-me-section-gradient: radial-gradient(#ff6a00, #ee0979)
@@ -26,6 +28,7 @@
     --nav-a-before-gradient: linear-gradient(to top, #ff6a00, #ee0979);
     --font-color: #e0e0e0;
     --body-background-color: #0d0d1a;
+    --card-7-background: white;
     --shadow-color: rgba(255, 255, 255, 0.5);
     --scroll-to-top-button-border-color: rgba(255, 255, 255, 0.4);
     --about-me-section-gradient: radial-gradient(#ff6a00, #ee0979)
@@ -377,28 +380,36 @@ div.cards img {
     object-fit: contain;
 }
 
-#card1 {
+.cards:nth-child(8n + 1) {
     background-color: var(--card-1-background);
 }
 
-#card2 {
+.cards:nth-child(8n + 2) {
     background-color: var(--card-2-background);
 }
 
-#card3 {
+.cards:nth-child(8n + 3) {
     background-color: var(--card-3-background);
 }
 
-#card4 {
+.cards:nth-child(8n + 4) {
     background-color: var(--card-4-background);
 }
 
-#card5 {
+.cards:nth-child(8n + 5) {
     background-color: var(--card-5-background);
 }
 
-#card6 {
+.cards:nth-child(8n + 6) {
     background-color: var(--card-6-background);
+}
+
+.cards:nth-child(8n + 7) {
+    background-color: var(--card-7-background);
+}
+
+.cards:nth-child(8n + 8) {
+    background-color: var(--card-8-background);
 }
 
 button.scroll-to-top-btn {
