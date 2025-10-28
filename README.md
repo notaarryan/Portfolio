@@ -27,7 +27,7 @@ This portfolio was originally built as a static site using vanilla HTML, CSS, an
 
 ## 🌐 Live Website
 
-Hosted at: [https://notaarryan.github.io/Portfolio/](https://notaarryan.github.io/Portfolio/)
+Hosted at: [https://aryanparmarporfolio.vercel.app/](https://aryanparmarporfolio.vercel.app/)
 
 ---
 
