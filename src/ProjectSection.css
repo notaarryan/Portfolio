@@ -5,6 +5,7 @@ div.projects-container {
     gap: 15px;
     align-content: center;
     justify-content: center;
+    padding: 50px;
 }
 
 div.projects-container div {
