@@ -2,6 +2,29 @@
 
 Welcome to my personal portfolio website! This site showcases my skills, projects, and accomplishments as a Computer Science student and aspiring Software Engineer.
 
+---
+
+## ⚛️ Migration to React & Modern Web Architecture
+
+This portfolio was originally built as a static site using vanilla HTML, CSS, and JavaScript. It has since been **migrated to a modern React-based architecture**, leveraging component-driven development, state management, and a scalable codebase.
+
+### Why React?
+- **Reusable Components:** UI sections are modularized into independent, reusable React components (e.g., `Nav`, `HeroSection`, `MainSection`), making the codebase cleaner and easier to maintain.
+- **State Management:** Features like dark/light mode toggling and scroll-to-top button visibility are managed through React state and hooks, enabling responsive, interactive UI updates.
+- **Modern Workflow:** The project uses modern tooling (`npm`, JSX, ES6+), and supports hot reloading for a seamless development experience.
+
+### Component Structure
+- `App.jsx`: The root component, manages global state (theme, scroll button).
+- `Nav.jsx`: Navigation bar with theme toggle.
+- `MainSection.jsx`: Main content wrapper.
+- `HeroSection.jsx`: Animated hero section with tech stack cards.
+- Additional sections and components are easily extendable due to the modular structure.
+
+### Development Workflow
+- **Install dependencies** with `npm install`
+- **Run locally** with `npm start` (hot reloading enabled)
+- **Production builds** are optimized for performance and maintainability.
+
 ## 🌐 Live Website
 
 Hosted at: [https://notaarryan.github.io/Portfolio/](https://notaarryan.github.io/Portfolio/)
@@ -10,31 +33,33 @@ Hosted at: [https://notaarryan.github.io/Portfolio/](https://notaarryan.github.i
 
 ## 🚀 Technologies Used
 
-- **HTML5**
-- **CSS3** (custom properties, grid, flexbox, animations, transitions)
-- **JavaScript (ES6+)** (OOP, DOM manipulation, event handling)
+- **React** (component-based UI library)
+- **HTML5** (via JSX)
+- **CSS3** (custom properties, grid, flexbox, animations, transitions; imported as modules)
+- **JavaScript (ES6+)** (functional components, hooks, modular code)
 - **Webpack** (modular bundling for production and development)
 - **Jest** (unit testing)
-- **Babel** (transpiling modern JS)
+- **Babel** (transpiling modern JS/JSX)
 - **ESLint** (code linting)
 
 ## 🛠️ Skills & Mastery
 
+- Component-driven development with React
 - Responsive web design & mobile-first development
 - Advanced CSS (variables, grid, flexbox, media queries)
-- JavaScript DOM manipulation and event handling
+- React hooks for interactivity and state (e.g., theme, scroll events)
 - Local storage for theme persistence
 - Interactive UI features (card rotation, scroll-to-top button, dark/light mode toggle)
-- Modular code structure and OOP in JS
+- Modular code structure and maintainability
 - Accessibility best practices (semantic HTML, alt tags)
 - SEO optimization (meta tags, Open Graph)
 - Git & GitHub for version control and deployment
 
 ## 📂 Notable Features
 
-- **Dynamic Hero Section:** Animated tech stack cards with smooth transitions
-- **Dark/Light Mode:** Persistent theme toggle with local storage
-- **Scroll-to-Top Button:** Appears on scroll for improved UX
+- **Dynamic Hero Section:** Animated tech stack cards with smooth transitions (powered by React state and effects)
+- **Dark/Light Mode:** Persistent theme toggle with local storage, managed by React
+- **Scroll-to-Top Button:** Appears on scroll for improved UX (React state-driven)
 - **Projects Showcase:** Live GitHub repository pins with direct links
 - **About & Contact Sections:** Education, tech stack, certifications, and social links
 - **Mobile Friendly:** Fully responsive layout for all devices
@@ -62,7 +87,7 @@ Hosted at: [https://notaarryan.github.io/Portfolio/](https://notaarryan.github.i
    ```bash
    npm start
    ```
-4. Open `http://localhost:8080` in your browser.
+4. Open `http://localhost:8080` in your browser (or the port shown in your terminal).
 
 ## 📊 Lighthouse Score (Mobile)
 
@@ -89,3 +114,4 @@ Hosted at: [https://notaarryan.github.io/Portfolio/](https://notaarryan.github.i
 ## 📝 License
 
 This project is open source and available under the MIT License.
+
