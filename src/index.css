@@ -175,39 +175,39 @@ table {
 
 @media (max-width: 1000px) {
 
-  body>div#root>nav {
+  body>div#root>div>nav {
     flex-direction: column;
     width: 100vw;
     padding: 20px 0;
   }
 
-  body>div#root>main>section.hero-section {
+  body>div#root>div>main>section.hero-section {
     padding: 0px;
   }
 
-  body>div#root>main>section.about-section>div.content {
+  body>div#root>div>main>section.about-section>div.content {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
-  body>div#root>main>section {
+  body>div#root>div>main>section {
     max-width: 100vw;
     padding: 60px 0px;
   }
 
-  body>div#root>main>section.projects-section>div.projects-container.reveal-content-on-scroll {
+  body>div#root>div>main>section.projects-section>div.projects-container.reveal-content-on-scroll {
     animation: none;
     animation-timeline: none;
   }
 
-  body>div#root>main>section:not(.hero-section)>div {
+  body>div#root>div>main>section:not(.hero-section)>div {
     padding: 40px 10px;
   }
 
-  body>div#root>main>section.hero-section>div {
+  body>div#root>div>main>section.hero-section>div {
     padding: 0 10px;
   }
 
-  body>div#root>button.scroll-to-top-btn {
+  body>div#root>div>button.scroll-to-top-btn {
     width: 60px;
     height: 60px;
     bottom: 15px;

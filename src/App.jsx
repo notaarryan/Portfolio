@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import Nav from "./Nav";
-import MainSection from "./MainSection";
-import FooterSection from "./FooterSection";
+import InteractiveDots from "./InteractiveDots";
 
 function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -38,9 +36,14 @@ function App() {
           ↑
         </button>
       )}
-      <Nav setLightMode={setLightMode} setGithubLogoSrc={setGithubLogoSrc} />
-      <MainSection setShowScrollButton={setShowScrollButton} />
-      <FooterSection githubLogoSrc={githubLogoSrc} />
+      <InteractiveDots
+        backgroundColor={lightMode == "light" ? "#ffffff" : "#0d0d1a"}
+        dotColor={lightMode == "light" ? "#cccccc" : "#e0e0e0"}
+        githubLogoSrc={githubLogoSrc}
+        setLightMode={setLightMode}
+        setGithubLogoSrc={setGithubLogoSrc}
+        setShowScrollButton={setShowScrollButton}
+      />
     </>
   );
 }
