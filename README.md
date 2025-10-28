@@ -9,11 +9,13 @@ Welcome to my personal portfolio website! This site showcases my skills, project
 This portfolio was originally built as a static site using vanilla HTML, CSS, and JavaScript. It has since been **migrated to a modern React-based architecture**, leveraging component-driven development, state management, and a scalable codebase.
 
 ### Why React?
+
 - **Reusable Components:** UI sections are modularized into independent, reusable React components (e.g., `Nav`, `HeroSection`, `MainSection`), making the codebase cleaner and easier to maintain.
 - **State Management:** Features like dark/light mode toggling and scroll-to-top button visibility are managed through React state and hooks, enabling responsive, interactive UI updates.
 - **Modern Workflow:** The project uses modern tooling (`npm`, JSX, ES6+), and supports hot reloading for a seamless development experience.
 
 ### Component Structure
+
 - `App.jsx`: The root component, manages global state (theme, scroll button).
 - `Nav.jsx`: Navigation bar with theme toggle.
 - `MainSection.jsx`: Main content wrapper.
@@ -21,6 +23,7 @@ This portfolio was originally built as a static site using vanilla HTML, CSS, an
 - Additional sections and components are easily extendable due to the modular structure.
 
 ### Development Workflow
+
 - **Install dependencies** with `npm install`
 - **Run locally** with `npm start` (hot reloading enabled)
 - **Production builds** are optimized for performance and maintainability.
@@ -89,29 +92,17 @@ Hosted at: [https://aryanparmarporfolio.vercel.app/](https://aryanparmarporfolio
    ```
 4. Open `http://localhost:8080` in your browser (or the port shown in your terminal).
 
-## 📊 Lighthouse Score (Mobile)
-
-<p align="center">
-  <img src="./src/assets/lighthouse-mobile.png" alt="Lighthouse Mobile Score" style="max-width:100%; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);" />
-</p>
-
-- **Performance:** 82
-- **Accessibility:** 100
-- **Best Practices:** 100
-- **SEO:** 100
-
 ## 📊 Lighthouse Score (Desktop)
 
 <p align="center">
   <img src="./src/assets/lighthouse-desktop.png" alt="Lighthouse Desktop Score" style="max-width:100%; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15);" />
 </p>
 
-- **Performance:** 97
-- **Accessibility:** 96
+- **Performance:** 94
+- **Accessibility:** 100
 - **Best Practices:** 100
 - **SEO:** 100
 
 ## 📝 License
 
 This project is open source and available under the MIT License.
-
