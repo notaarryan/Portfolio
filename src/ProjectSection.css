@@ -1,0 +1,24 @@
+div.projects-container {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 15px;
+    align-content: center;
+    justify-content: center;
+}
+
+div.projects-container div {
+    border: 1px solid var(--font-color);
+    border-radius: 15px;
+    padding: 10px;
+    transition: transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+}
+
+main>section.projects-section>div.projects-container.reveal-content-on-scroll {
+    animation: revealContentOnScroll 3s both;
+    animation-timeline: view(90% 5%);
+}

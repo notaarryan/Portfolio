@@ -1,0 +1,107 @@
+section.about-section>div.content {
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+section.about-section>div.content div {
+    height: 100%;
+    padding: 10px;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+section.about-section .left-content p.about-me-description {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+div.content div.left-content.reveal-on-scroll {
+    animation: revealContentOnScroll 3s both;
+    animation-timeline: view(90% 5%);
+}
+
+div.content div.right-content.reveal-on-scroll {
+    animation: revealContentOnScroll 3s both;
+    animation-timeline: view(90% 30%);
+}
+
+section.about-section>div.content div h3 {
+    font-family: var(--headings-font);
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    align-self: flex-start;
+    margin-bottom: 1.5rem;
+    width: max-content;
+    position: relative;
+}
+
+section.about-section>div.content div h3::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--font-color);
+}
+
+section.about-section>div.content div ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    list-style: disc;
+}
+
+section.about-section .right-content h3 {
+    margin-top: 2rem;
+}
+
+section.about-section .left-content h3 {
+    margin-top: 2rem;
+}
+
+section.about-section .left-content p {
+    max-width: 75%;
+    margin-bottom: 0.5rem;
+}
+
+section.about-section .left-content p.degree {
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    text-align: center;
+}
+
+section.about-section .left-content p.university {
+    font-size: clamp(0.8rem, 1.5vw, 1.25rem);
+}
+
+section.about-section .left-content p.graduation {
+    font-size: clamp(0.5rem, 1vw, 1rem) !important;
+}
+
+section.about-section>div.content div.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    grid-auto-flow: row;
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+}
+
+section.about-section .right-content div.container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.wave {
+    animation-name: wave-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+}
