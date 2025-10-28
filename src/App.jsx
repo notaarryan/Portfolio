@@ -18,6 +18,11 @@ function App() {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", lightMode === "dark");
+    if (lightMode === "dark") {
+      setGithubLogoSrc(
+        "https://img.icons8.com/?size=100&id=12598&format=png&color=FFFFFF"
+      );
+    }
     localStorage.setItem("lightingMode", lightMode);
     setTimeout(() => {
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
