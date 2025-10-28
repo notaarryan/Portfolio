@@ -26,7 +26,7 @@ function Nav({ setLightMode, setGithubLogoSrc }) {
     <nav>
       <div className="title">
         <a
-          href="https://notaarryan.github.io/Portfolio/"
+          href="https://aryanparmarporfolio.vercel.app/"
           className="site-title"
         >
           Aryan Parmar
