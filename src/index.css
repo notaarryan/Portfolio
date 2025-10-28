@@ -228,3 +228,23 @@ body {
 body.loaded {
   animation: fadeInPage 1s ease-in-out both;
 }
+
+button.scroll-to-top-btn {
+  color: var(--font-color);
+  border: 1px var(--scroll-to-top-button-border-color) solid;
+  box-shadow: 0 0 10px var(--shadow-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  z-index: 1000;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+button.scroll-to-top-btn:hover {
+  opacity: 1;
+}

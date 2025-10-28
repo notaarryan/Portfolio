@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Nav from "./Nav";
+import MainSection from "./MainSection";
 
 function App() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -10,22 +11,6 @@ function App() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setShowScrollButton(true);
-      } else {
-        setShowScrollButton(false);
-      }
-      // this.removeCardsOnScroll();
-      // this.rotateCards();
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", lightMode === "dark");
@@ -46,6 +31,7 @@ function App() {
         </button>
       )}
       <Nav setLightMode={setLightMode} />
+      <MainSection setShowScrollButton={setShowScrollButton} />
     </>
   );
 }

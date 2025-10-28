@@ -1,0 +1,85 @@
+section.hero-section {
+    width: 100vw;
+    display: flex;
+    height: 1300vh;
+}
+
+section.hero-section>div.hero-section-left {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    height: 100vh;
+}
+
+section.hero-section>div.hero-section-left>div.text>h1 {
+    font-family: var(--headings-font);
+    font-size: clamp(2.5rem, 7vw, 3rem);
+    font-weight: bold;
+}
+
+section.hero-section>div.hero-section-left>div.text>p {
+    font-family: var(--headings-font);
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+}
+
+section.hero-section>div.hero-section-right {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    height: 100vh;
+}
+
+.cards {
+    position: absolute;
+    padding: 40px;
+    /* max-width: 350px; */
+    width: min(35vw, 350px);
+    aspect-ratio: 1/1;
+    border-radius: 25px;
+    transition: transform 0.2s;
+}
+
+div.cards img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.cards:nth-child(8n + 1) {
+    background-color: var(--card-1-background);
+}
+
+.cards:nth-child(8n + 2) {
+    background-color: var(--card-2-background);
+}
+
+.cards:nth-child(8n + 3) {
+    background-color: var(--card-3-background);
+}
+
+.cards:nth-child(8n + 4) {
+    background-color: var(--card-4-background);
+}
+
+.cards:nth-child(8n + 5) {
+    background-color: var(--card-5-background);
+}
+
+.cards:nth-child(8n + 6) {
+    background-color: var(--card-6-background);
+}
+
+.cards:nth-child(8n + 7) {
+    background-color: var(--card-7-background);
+}
+
+.cards:nth-child(8n + 8) {
+    background-color: var(--card-8-background);
+}
