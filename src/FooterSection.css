@@ -8,6 +8,7 @@ footer>section {
     align-items: center;
     flex-direction: column;
     gap: min(5%, 10px);
+    opacity: 0.8;
 }
 
 section.contact-me-section>div {

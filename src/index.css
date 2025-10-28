@@ -242,10 +242,11 @@ button.scroll-to-top-btn {
   right: 20px;
   font-size: clamp(1.5rem, 3vw, 2rem);
   z-index: 1000;
-  opacity: 0.8;
-  transition: opacity 0.3s;
+  opacity: 1;
+  transition: opacity, transform ease-in-out 0.3s;
 }
 
 button.scroll-to-top-btn:hover {
   opacity: 1;
+  transform: scale(1.15);
 }
