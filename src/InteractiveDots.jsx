@@ -64,8 +64,8 @@ const InteractiveDots = ({
   const initializeDots = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const canvasWidth = canvas.clientWidth;
-    const canvasHeight = canvas.clientHeight;
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight;
     const dots = [];
     for (let x = gridSpacing / 2; x < canvasWidth; x += gridSpacing) {
       for (let y = gridSpacing / 2; y < canvasHeight; y += gridSpacing) {
@@ -137,8 +137,8 @@ const InteractiveDots = ({
     if (!ctx) return;
     timeRef.current += animationSpeed;
     const currentTime = Date.now();
-    const canvasWidth = canvas.clientWidth;
-    const canvasHeight = canvas.clientHeight;
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight;
     ctx.fillStyle = backgroundColor;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     dotsRef.current.forEach((dot) => {
@@ -220,7 +220,7 @@ const InteractiveDots = ({
     };
   }, [animate, resizeCanvas, handleMouseMove, handleMouseDown, handleMouseUp]);
   return (
-    <div className="relative w-full h-full 100%" style={{ backgroundColor }}>
+    <div className="relative w-full h-full 100% background-container">
       {showCanvas && <canvas ref={canvasRef} className="background-canvas" />}
       <Nav setLightMode={setLightMode} setGithubLogoSrc={setGithubLogoSrc} />
       <MainSection setShowScrollButton={setShowScrollButton} />
