@@ -38,7 +38,7 @@ function App() {
       )}
       <InteractiveDots
         backgroundColor={lightMode == "light" ? "#ffffff" : "#0d0d1a"}
-        dotColor={lightMode == "light" ? "#cccccc" : "#3a3a58"}
+        dotColor={lightMode == "light" ? "#faddddff" : "#3a3a58"}
         githubLogoSrc={githubLogoSrc}
         setLightMode={setLightMode}
         setGithubLogoSrc={setGithubLogoSrc}
