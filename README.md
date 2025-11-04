@@ -78,19 +78,37 @@ Hosted at: [https://aryanparmarporfolio.vercel.app/](https://aryanparmarporfolio
 
 ## 📄 How to Run Locally
 
+### Prerequisites
+
+- Install [Docker Engine](https://docs.docker.com/get-docker/) on your machine to run the app in a container.
+
 1. Clone the repository:
    ```bash
-   git clone https://github.com/notaarryan/Portfolio.git
+   git clone https://github.com/notaarryan/Portfolio
    ```
-2. Install dependencies:
+2. Build the Docker image:
    ```bash
-   npm install
+   docker build -t portfolio:dev .
    ```
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-4. Open `http://localhost:8080` in your browser (or the port shown in your terminal).
+3. Run the Docker container:
+
+   To enable **auto-reload on save**, mount your local source code directory as a volume inside the container. This allows the container to detect file changes and reload the app automatically.
+
+   - **For macOS/Linux:**
+
+     ```bash
+     docker run -p 5173:5173 -v $(pwd):/app -v /app/node_modules portfolio:dev
+     ```
+
+     Here, `$(pwd)` mounts your current directory to `/app` inside the container, and `/app/node_modules` is a separate volume to avoid overwriting container dependencies.
+
+   - **For Windows (PowerShell):**
+     ```powershell
+     docker run -p 5173:5173 -v ${PWD}:/app -v /app/node_modules portfolio:dev
+     ```
+     This mounts your current directory and handles `node_modules` similarly to prevent conflicts.
+
+4. Open `http://localhost:5173` in your browser.
 
 ## 📊 Lighthouse Score (Desktop)
 
