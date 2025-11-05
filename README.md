@@ -44,6 +44,7 @@ Hosted at: [https://aryanparmarporfolio.vercel.app/](https://aryanparmarporfolio
 - **Jest** (unit testing)
 - **Babel** (transpiling modern JS/JSX)
 - **ESLint** (code linting)
+- **Docker** (containerization of project for production)
 
 ## 🛠️ Skills & Mastery
 
