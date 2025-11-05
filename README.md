@@ -97,7 +97,7 @@ Hosted at: [https://aryanparmarporfolio.vercel.app/](https://aryanparmarporfolio
    - **For macOS/Linux:**
 
      ```bash
-     docker run -p 5173:5173 -v $(pwd):/app -v /app/node_modules portfolio:dev
+     docker run -it --rm -p 5173:5173 -v "$PWD":/app -v /app/node_modules portfolio:dev
      ```
 
      Here, `$(pwd)` mounts your current directory to `/app` inside the container, and `/app/node_modules` is a separate volume to avoid overwriting container dependencies.
